@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>06 · 安全红绿灯</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&family=Nunito:wght@600;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#3E3A34;--ink2:#8B8477;--blue:#2456E8;--blue-lite:#7FA0F5;--blue-soft:#E6EDFC;--cream:#FCF7EF;--cream-2:#F6EFE1;--paper:#FFFDF8;--line:rgba(62,58,52,.12);--green:#3F9F63;--yellow:#D9A11A;--red:#D75353}
+html,body{width:560px;height:794px}
+body{overflow:hidden;color:var(--ink);font-family:'Noto Sans SC',sans-serif;-webkit-font-smoothing:antialiased}
+.page{position:relative;width:560px;height:794px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#FFFDF8 0%,#FCF7EF 55%,#F6EFE1 100%);padding:70px 40px 40px;display:flex;flex-direction:column}
+.logo{position:absolute;top:26px;left:34px;height:34px;z-index:20}
+.pageno{position:absolute;right:30px;bottom:20px;font-family:'Fraunces',serif;font-weight:400;font-size:15px;color:var(--ink2);letter-spacing:.06em;z-index:20}
+.pageno .dot{width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.9}
+.deco{position:absolute;pointer-events:none;z-index:5;font-family:'Nunito',sans-serif;font-weight:900;color:var(--blue)}
+.d1{top:70px;right:44px;font-size:18px}
+.d2{top:118px;right:100px;font-size:12px;color:var(--blue-lite)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.24em;color:var(--blue)}
+.eyebrow::before{content:"";width:20px;height:2.5px;border-radius:2px;background:var(--blue)}
+.head{display:flex;align-items:center;gap:16px}
+.head .tx{flex:1}
+h1{font-family:'ZCOOL KuaiLe',cursive;font-weight:400;font-size:30px;line-height:1.22;color:var(--ink);margin-top:8px}
+h1 .hl{color:var(--blue)}
+.lead{font-size:13px;line-height:1.62;color:var(--ink2);margin-top:8px}
+.pic{width:104px;height:104px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid #fff;filter:drop-shadow(0 6px 6px rgba(62,58,52,.3));position:relative}
+.pic::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--blue);opacity:.4}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;clip-path:circle(50%);-webkit-clip-path:circle(50%)}
+.lights{margin-top:14px;display:flex;flex-direction:column;gap:11px}
+.l{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px 18px;display:grid;grid-template-columns:28px 1fr;gap:18px;align-items:center;position:relative;overflow:hidden}
+.l::before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:var(--blue);opacity:.18}
+.signal{width:28px;height:60px;border:1.5px solid rgba(62,58,52,.2);border-radius:9px;background:#F6EFE1;display:flex;flex-direction:column;align-items:center;justify-content:space-around;padding:4px 0}
+.signal .s{width:12px;height:12px;border-radius:50%;background:rgba(62,58,52,.14)}
+.l.green .signal .s.g{background:var(--green);box-shadow:0 0 0 3px rgba(63,159,99,.16)}
+.l.yellow .signal .s.y{background:var(--yellow);box-shadow:0 0 0 3px rgba(217,161,26,.16)}
+.l.red .signal .s.r{background:var(--red);box-shadow:0 0 0 3px rgba(215,83,83,.16)}
+.l .t{font-size:15.5px;font-weight:700;color:var(--ink)}
+.l .t em{font-family:'Nunito',sans-serif;font-style:normal;font-weight:800;font-size:11px;letter-spacing:.14em;margin-left:9px}
+.l.green .t em{color:var(--green)}.l.yellow .t em{color:var(--yellow)}.l.red .t em{color:var(--red)}
+.l .d{font-size:12px;line-height:1.55;color:var(--ink2);margin-top:5px}
+.l .d b{color:var(--ink);font-weight:700}
+.safe{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:13px}
+.safe div{font-size:12px;line-height:1.5;color:var(--ink);display:flex;gap:8px;align-items:flex-start}
+.safe div .sd{width:8px;height:8px;border-radius:50%;background:var(--blue);margin-top:5px;flex-shrink:0}
+.say{margin-top:12px;background:var(--blue-soft);border-radius:16px;padding:14px 18px;display:flex;gap:13px;align-items:center;border:1px solid rgba(36,86,232,.18)}
+.say .ic{width:32px;height:32px;border-radius:10px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Nunito',sans-serif;font-weight:900;font-size:16px}
+.say p{font-size:14px;line-height:1.5;color:var(--ink);font-weight:700}
+.say p b{color:var(--blue)}
+.promise-box{margin-top:12px;background:var(--blue-soft);border:1.5px solid rgba(36,86,232,.22);border-radius:16px;padding:12px 16px;display:flex;flex-direction:column;gap:8px}
+.promise-box .ph{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:700;color:var(--blue)}
+.promise-box .ph .ic{width:26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.promise-box .ph .ic svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.promise-txt{font-size:13px;font-weight:700;line-height:1.5;color:var(--ink)}
+.promise-sign{display:flex;align-items:flex-end;gap:10px;font-size:12px;color:var(--ink2);margin-top:2px}
+.promise-sign .line{flex:1;border-bottom:1.5px solid rgba(36,86,232,.35);height:1px;margin-bottom:3px}
+@page { size: 560px 794px; margin: 0; }
+</style></head>
+<body><main class="page">
+<img class="logo" src="./img/logo.png" alt="跳跳糖 员工公益">
+<span class="deco d1">✦</span>
+<span class="deco d2">?</span>
+<div class="head">
+<div class="tx">
+<div class="eyebrow">SAFETY LIGHTS</div>
+<h1>记住安全<span class="hl">红绿灯</span></h1>
+<div class="lead">这一页告诉我们：就算 AI 很会聊天，也不能随便把自己的小秘密告诉它。先看灯，再行动。</div>
+</div>
+<div class="pic"><img src="./img/safety_round.png" alt="低饱和暖色红绿灯和机器人"></div>
+</div>
+<div class="lights">
+<div class="l green"><div class="signal"><span class="s"></span><span class="s"></span><span class="s g"></span></div><div><div class="t">绿灯：可以尝试</div><div class="d"><b>适合问：</b>讲故事、查小知识、练习英语、想手工点子。例："给我一个纸杯火箭实验。"</div></div></div>
+<div class="l yellow"><div class="signal"><span class="s"></span><span class="s y"></span><span class="s"></span></div><div><div class="t">黄灯：要核对</div><div class="d"><b>先停一下：</b>遇到陌生链接、要下载东西、要注册账号，或者拿不准的时候，都先问大人。</div></div></div>
+<div class="l red"><div class="signal"><span class="s r"></span><span class="s"></span><span class="s"></span></div><div><div class="t">红灯：必须停止</div><div class="d"><b>绝对不能说：</b>真实姓名、家庭住址、学校、电话号码、密码、照片、验证码。如果有人来要这些信息，要马上告诉大人。</div></div></div>
+</div>
+<div class="safe">
+<div><span class="sd"></span>小动作 1：看到"填资料"，先举手问</div>
+<div><span class="sd"></span>小动作 2：不和陌生人或陌生 AI 私下见面</div>
+</div>
+<div class="promise-box">
+<div class="ph"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div><span>我的安全小承诺</span></div>
+<div class="promise-txt">我承诺：绿灯试一试，黄灯问一问，红灯大声说"不"！</div>
+<div class="promise-sign">我是探险家 <span class="line"></span> 签名确认</div>
+</div>
+<div class="pageno">6</div>
+</main></body></html>

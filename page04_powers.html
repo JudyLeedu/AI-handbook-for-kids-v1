@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>02 · AI四大超能力</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&family=Nunito:wght@600;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#3E3A34;--ink2:#8B8477;--blue:#2456E8;--blue-lite:#7FA0F5;--blue-soft:#E6EDFC;--cream:#FCF7EF;--cream-2:#F6EFE1;--paper:#FFFDF8;--line:rgba(62,58,52,.12)}
+html,body{width:560px;height:794px}
+body{overflow:hidden;color:var(--ink);font-family:'Noto Sans SC',sans-serif;-webkit-font-smoothing:antialiased}
+.page{position:relative;width:560px;height:794px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#FFFDF8 0%,#FCF7EF 55%,#F6EFE1 100%);padding:70px 40px 40px;display:flex;flex-direction:column}
+.logo{position:absolute;top:26px;left:34px;height:34px;z-index:20}
+.pageno{position:absolute;right:30px;bottom:20px;font-family:'Fraunces',serif;font-weight:400;font-size:15px;color:var(--ink2);letter-spacing:.06em;z-index:20}
+.pageno .dot{width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.9}
+.deco{position:absolute;pointer-events:none;z-index:5;font-family:'Nunito',sans-serif;font-weight:900;color:var(--blue)}
+.d1{top:70px;right:44px;font-size:18px}
+.d2{top:118px;right:100px;font-size:12px;color:var(--blue-lite)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.24em;color:var(--blue)}
+.eyebrow::before{content:"";width:20px;height:2.5px;border-radius:2px;background:var(--blue)}
+h1{font-family:'ZCOOL KuaiLe',cursive;font-weight:400;font-size:30px;line-height:1.2;color:var(--ink);margin-top:8px}
+h1 .hl{color:var(--blue)}
+.lead{font-size:13.5px;line-height:1.66;color:var(--ink2);margin-top:9px;max-width:460px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px 16px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--blue);opacity:.14}
+.card .hd{display:flex;align-items:center;gap:11px}
+.card .pic{width:50px;height:50px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid #fff;filter:drop-shadow(0 4px 4px rgba(62,58,52,.3));position:relative}
+.card .pic::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--blue);opacity:.4}
+.card .pic img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;clip-path:circle(50%)}
+.card .t{font-size:16px;font-weight:700;color:var(--ink)}
+.card .d{font-size:12px;line-height:1.58;color:var(--ink2);margin-top:11px}
+.card .ex{font-size:11px;line-height:1.5;color:var(--ink);margin-top:10px;padding-top:9px;border-top:1px dashed rgba(36,86,232,.3)}
+.card .ex span{color:var(--blue);font-weight:700}
+.wish{margin-top:15px;background:var(--blue-soft);border-radius:16px;padding:15px 18px;display:flex;gap:13px;align-items:center;border:1px solid rgba(36,86,232,.18)}
+.wish .ic{width:34px;height:34px;border-radius:10px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Nunito',sans-serif;font-weight:900;font-size:17px}
+.wish p{font-size:12.5px;line-height:1.6;color:var(--ink)}
+.wish p b{color:var(--blue);font-weight:700}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px}
+.mini div{font-size:12.5px;color:var(--ink2);line-height:1.5;padding-left:16px;position:relative}
+.mini div::before{content:"";position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.mini div b{color:var(--ink);font-weight:700}
+@page { size: 560px 794px; margin: 0; }
+</style></head>
+<body><main class="page">
+<img class="logo" src="./img/logo.png" alt="跳跳糖 员工公益">
+<span class="deco d1">✦</span>
+<span class="deco d2">?</span>
+<div class="eyebrow">AI POWERS</div>
+<h1>看看 <span class="hl">AI</span> 会什么</h1>
+<div class="lead">这些本领听起来很厉害，其实都是 AI 通过观察、学习和模仿，慢慢学会的。</div>
+<div class="cards">
+<div class="card"><div class="hd"><div class="pic"><img src="./img/power_see_round.png"></div><div class="t">会看</div></div><div class="d">能从图片里找线索，比如认出小猫、小狗和红绿灯。</div><div class="ex"><span>生活例子</span> 拍一朵花，问"它可能叫什么？"</div></div>
+<div class="card"><div class="hd"><div class="pic"><img src="./img/power_hear_round.png"></div><div class="t">会听</div></div><div class="d">能听懂语音指令，把你说的话变成文字或行动。</div><div class="ex"><span>生活例子</span> 说"明早 7 点叫醒我"。</div></div>
+<div class="card"><div class="hd"><div class="pic"><img src="./img/power_speak_round.png"></div><div class="t">会说</div></div><div class="d">能回答问题，改写句子，还能把难懂的话讲得更容易明白。</div><div class="ex"><span>生活例子</span> 问"月亮为什么会变圆变弯？"</div></div>
+<div class="card"><div class="hd"><div class="pic"><img src="./img/power_think_round.png"></div><div class="t">会出点子</div></div><div class="d">能帮你想故事、做计划、列清单，不过最后选哪个，还是要自己来决定。</div><div class="ex"><span>生活例子</span> 设计一个周末小实验。</div></div>
+</div>
+<div class="wish">
+<div class="ic">✦</div>
+<p><b>许愿气泡：</b>我最想让 AI 帮我 ______。说完再想一想：这件事要不要请大人一起看看？</p>
+</div>
+<div class="mini">
+<div><b>小提示 </b>问得越清楚，回答越有用</div>
+<div><b>小提醒 </b>看见答案，也要动脑检查</div>
+</div>
+<div class="pageno">2</div>
+</main></body></html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05 · 使用AI三步秘籍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&family=Nunito:wght@600;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#3E3A34;--ink2:#8B8477;--blue:#2456E8;--blue-lite:#7FA0F5;--blue-soft:#E6EDFC;--cream:#FCF7EF;--cream-2:#F6EFE1;--paper:#FFFDF8;--line:rgba(62,58,52,.12)}
+html,body{width:560px;height:794px}
+body{overflow:hidden;color:var(--ink);font-family:'Noto Sans SC',sans-serif;-webkit-font-smoothing:antialiased}
+.page{position:relative;width:560px;height:794px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#FFFDF8 0%,#FCF7EF 55%,#F6EFE1 100%);padding:70px 40px 40px;display:flex;flex-direction:column}
+.logo{position:absolute;top:26px;left:34px;height:34px;z-index:20}
+.pageno{position:absolute;right:30px;bottom:20px;font-family:'Fraunces',serif;font-weight:400;font-size:15px;color:var(--ink2);letter-spacing:.06em;z-index:20}
+.pageno .dot{width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.9}
+.deco{position:absolute;pointer-events:none;z-index:5;font-family:'Nunito',sans-serif;font-weight:900;color:var(--blue)}
+.d1{top:70px;right:44px;font-size:18px}
+.d2{top:118px;right:100px;font-size:12px;color:var(--blue-lite)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.24em;color:var(--blue)}
+.eyebrow::before{content:"";width:20px;height:2.5px;border-radius:2px;background:var(--blue)}
+.head{display:flex;align-items:center;gap:16px}
+.head .tx{flex:1}
+h1{font-family:'ZCOOL KuaiLe',cursive;font-weight:400;font-size:30px;line-height:1.22;color:var(--ink);margin-top:8px}
+h1 .hl{color:var(--blue)}
+.lead{font-size:13.5px;line-height:1.66;color:var(--ink2);margin-top:9px}
+.pic{width:104px;height:104px;border-radius:50%;overflow:hidden;flex-shrink:0;border:3px solid #fff;filter:drop-shadow(0 6px 6px rgba(62,58,52,.3));position:relative}
+.pic::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--blue);opacity:.4}
+.pic img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;clip-path:circle(50%);-webkit-clip-path:circle(50%)}
+.steps{margin-top:16px;display:flex;flex-direction:column;gap:11px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 17px;display:grid;grid-template-columns:44px 1fr;gap:15px;align-items:start;position:relative;overflow:hidden}
+.step::before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:var(--blue);opacity:.18}
+.step .n{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Nunito',sans-serif;font-size:18px;font-weight:900;background:var(--blue)}
+.step .t{font-size:15.5px;font-weight:700;color:var(--ink)}
+.step .d{font-size:12.5px;line-height:1.55;color:var(--ink2);margin-top:5px}
+.step .ex{font-size:11.5px;line-height:1.5;color:var(--ink);margin-top:7px;padding-left:11px;border-left:2.5px solid var(--blue-soft)}
+.step .ex b{color:var(--blue);font-weight:700}
+.quiz{margin-top:13px;background:var(--blue-soft);border-radius:16px;padding:14px 17px;border:1px solid rgba(36,86,232,.18)}
+.quiz .qh{font-size:13.5px;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:9px}
+.quiz .qh .ic{width:24px;height:24px;border-radius:8px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:11px}
+.cmp div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:12px;line-height:1.5;color:var(--ink)}
+.cmp div .k{font-family:'Nunito',sans-serif;font-weight:800;color:var(--ink2);margin-right:6px}
+.cmp div.win{border-color:var(--blue);background:#F2F5FE;box-shadow:0 0 0 2px rgba(36,86,232,.1)}
+.cmp div.win .k{color:var(--blue)}
+.ans{font-size:12.5px;color:var(--ink);margin-top:10px;line-height:1.5}
+.ans b{color:var(--blue);font-weight:700}
+@page { size: 560px 794px; margin: 0; }
+</style></head>
+<body><main class="page">
+<img class="logo" src="./img/logo.png" alt="跳跳糖 员工公益">
+<span class="deco d1">✦</span>
+<span class="deco d2">?</span>
+<div class="head">
+<div class="tx">
+<div class="eyebrow">HOW TO ASK</div>
+<h1>学会怎么<span class="hl">问</span></h1>
+<div class="lead">把 AI 当成"小助手"时，你说得越清楚，它就越容易帮上忙。</div>
+</div>
+<div class="pic"><img src="./img/steps_round.png" alt="小朋友和机器人对话"></div>
+</div>
+<div class="steps">
+<div class="step"><div class="n">01</div><div><div class="t">说清楚</div><div class="d">告诉 AI：我是谁，我想知道什么，希望它讲几句话。</div><div class="ex"><b>例</b> 我是二年级学生，请用 5 句话解释彩虹。</div></div></div>
+<div class="step"><div class="n">02</div><div><div class="t">讲具体</div><div class="d">多说一点要求，比如人物、地方、想要什么感觉，别只说"随便"。</div><div class="ex"><b>例</b> 写一个小猪和冰淇淋的搞笑睡前故事。</div></div></div>
+<div class="step"><div class="n">03</div><div><div class="t">会检查</div><div class="d">看看它说得对不对。重要的事情，还要问老师、家长，或者看看书本。</div><div class="ex"><b>例</b> 数字、地址、健康和安全信息都要核对。</div></div></div>
+</div>
+<div class="quiz">
+<div class="qh"><span class="ic">?</span>选一选：想听故事，哪句更管用？</div>
+<div class="cmp"><div><span class="k">A</span>讲个故事。</div><div class="win"><span class="k">B</span>讲一个关于小猪吃冰淇淋、结尾很温暖的故事。</div></div>
+<div class="ans"><b>答案是 B。</b>因为这句话说得更清楚，AI 更容易听懂你的意思。</div>
+</div>
+<div class="pageno">5</div>
+</main></body></html>

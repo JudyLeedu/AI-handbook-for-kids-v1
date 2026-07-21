@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>封面C · 暖插画 + 科技点缀</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&family=Nunito:wght@800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:560px;height:794px}
+:root{--ink:#3E3A34;--ink2:#8B8477;--blue:#2456E8;--cream:#FCF7EF}
+body{overflow:hidden;color:var(--ink);font-family:'Noto Sans SC',sans-serif;-webkit-font-smoothing:antialiased}
+.page{position:relative;width:560px;height:794px;overflow:hidden;
+  background:radial-gradient(120% 80% at 50% 0%,#FFFDF8 0%,#FCF7EF 55%,#F6EFE1 100%);
+  padding:70px 40px 24px;display:flex;flex-direction:column}
+.logo{position:absolute;top:26px;left:34px;height:36px;z-index:20}
+/* 蓝色科技点缀星星/问号 */
+.deco{position:absolute;pointer-events:none;z-index:6;font-family:'Nunito',sans-serif;font-weight:900}
+.deco.s1{top:72px;right:44px;color:var(--blue);font-size:26px}
+.deco.s2{top:150px;right:100px;color:#7FA0F5;font-size:15px}
+.deco.s3{top:250px;right:36px;color:var(--blue);font-size:19px}
+.deco.q1{top:118px;right:154px;color:var(--blue);font-size:22px}
+/* 标题 */
+.head{position:relative;z-index:10}
+h1{font-family:'ZCOOL KuaiLe',cursive;font-weight:400;line-height:1.14;color:var(--ink);letter-spacing:.01em}
+h1 .r1{display:block;font-size:52px}
+h1 .r2{display:block;font-size:52px;margin-top:2px}
+h1 .ai{color:var(--blue)}
+.rule{margin-top:12px;width:64px;height:4px;border-radius:3px;background:var(--blue);position:relative}
+.rule::after{content:"";position:absolute;right:-16px;top:-3px;width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.sub{margin-top:12px;font-size:16px;line-height:1.6;color:var(--ink2);font-weight:500;white-space:nowrap}
+.sub .hl{color:var(--blue);font-weight:700}
+/* 主插画 */
+.hero{position:relative;flex:1;margin-top:0;display:flex;align-items:center;justify-content:center}
+.hero img{width:116%;max-width:none;height:auto;object-fit:contain;mix-blend-mode:multiply}
+/* 底部图标行（蓝色科技点缀） */
+.foot{position:relative;z-index:10;margin-top:2px;display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:6px;
+  font-family:'ZCOOL KuaiLe',cursive;font-size:16px;color:var(--blue);white-space:nowrap}
+.foot .item{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;flex-shrink:0}
+.foot .item span:not(.ic){white-space:nowrap;flex-shrink:0}
+.foot .ic{width:28px;height:28px;border:2.2px solid var(--blue);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0}
+.foot .ic svg{width:15px;height:15px}
+.foot .dot{color:#B7C4EC;font-size:15px;flex-shrink:0}
+@page { size: 560px 794px; margin: 0; }
+</style>
+</head>
+<body>
+<main class="page">
+  <img class="logo" src="./img/logo.png" alt="跳跳糖 员工公益">
+  <span class="deco s1">✦</span>
+  <span class="deco s2">✦</span>
+  <span class="deco s3">✦</span>
+  <span class="deco q1">?</span>
+
+  <div class="head">
+    <h1>
+      <span class="r1">跳跳糖 <span class="ai">AI</span></span>
+      <span class="r2">魔法探险之旅</span>
+    </h1>
+    <div class="rule"></div>
+    <div class="sub">嗨！我是跳跳糖，带你一起去认识 <span class="hl">AI 新朋友！</span></div>
+  </div>
+
+  <div class="hero">
+    <img src="./img/cover_warm_white.jpg" alt="跳跳糖机器人和两个小朋友一起读书探险">
+  </div>
+
+  <div class="foot">
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></span>看一看</div>
+    <span class="dot">&nbsp;</span>
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.2 9a2.8 2.8 0 1 1 4.2 2.4c-.9.6-1.4 1.1-1.4 2.1"/><circle cx="12" cy="17.6" r="1.1" fill="currentColor" stroke="none"/></svg></span>问一问</div>
+    <span class="dot">&nbsp;</span>
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5l4 4L8 20l-4.5 1L4.5 16.5 14.5 5.5Z"/><path d="M13 7l4 4"/></svg></span>试一试</div>
+    <span class="dot">&nbsp;</span>
+    <div class="item"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 21s-7.5-4.6-10-9.4C.6 8.7 2.2 5.5 5.4 5.5c2 0 3.3 1.2 4.1 2.4l.5.8.5-.8c.8-1.2 2.1-2.4 4.1-2.4 3.2 0 4.8 3.2 3.4 6.1C19.5 16.4 12 21 12 21Z"/></svg></span>也要保护好自己</div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03 · 身边AI工具</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&family=Nunito:wght@600;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#3E3A34;--ink2:#8B8477;--blue:#2456E8;--blue-lite:#7FA0F5;--blue-soft:#E6EDFC;--cream:#FCF7EF;--cream-2:#F6EFE1;--paper:#FFFDF8;--line:rgba(62,58,52,.12)}
+html,body{width:560px;height:794px}
+body{overflow:hidden;color:var(--ink);font-family:'Noto Sans SC',sans-serif;-webkit-font-smoothing:antialiased}
+.page{position:relative;width:560px;height:794px;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#FFFDF8 0%,#FCF7EF 55%,#F6EFE1 100%);padding:70px 40px 40px;display:flex;flex-direction:column}
+.logo{position:absolute;top:26px;left:34px;height:34px;z-index:20}
+.pageno{position:absolute;right:30px;bottom:20px;font-family:'Fraunces',serif;font-weight:400;font-size:15px;color:var(--ink2);letter-spacing:.06em;z-index:20}
+.pageno .dot{width:5px;height:5px;border-radius:50%;background:var(--blue);opacity:.9}
+.deco{position:absolute;pointer-events:none;z-index:5;font-family:'Nunito',sans-serif;font-weight:900;color:var(--blue)}
+.d1{top:70px;right:44px;font-size:18px}
+.d2{top:118px;right:100px;font-size:12px;color:var(--blue-lite)}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Nunito',sans-serif;font-weight:800;font-size:11.5px;letter-spacing:.24em;color:var(--blue)}
+.eyebrow::before{content:"";width:20px;height:2.5px;border-radius:2px;background:var(--blue)}
+h1{font-family:'ZCOOL KuaiLe',cursive;font-weight:400;font-size:30px;line-height:1.2;color:var(--ink);margin-top:8px}
+h1 .hl{color:var(--blue)}
+.lead{font-size:13px;line-height:1.62;color:var(--ink2);margin-top:8px;max-width:460px}
+.banner{margin-top:13px;height:128px;border-radius:18px;overflow:hidden;border:1.5px solid rgba(36,86,232,.2);box-shadow:0 8px 20px -14px rgba(62,58,52,.4);position:relative}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
+.banner::after{content:"";position:absolute;inset:0;border-radius:18px;box-shadow:inset 0 0 0 2px rgba(36,86,232,.14);pointer-events:none}
+.tools{margin-top:14px;display:flex;flex-direction:column;gap:9px}
+.tool{background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 15px;display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center;position:relative;overflow:hidden}
+.tool::before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:var(--blue);opacity:.18}
+.tool .nm{font-size:14px;font-weight:700;color:var(--ink)}
+.tool .nm span{display:block;font-family:'Nunito',sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.14em;color:var(--blue);margin-top:2px}
+.tool .info{font-size:11.5px;line-height:1.55;color:var(--ink2)}
+.tool .info b{color:var(--blue);font-weight:700}
+.home{margin-top:12px;background:var(--blue-soft);border:1px solid rgba(36,86,232,.18);border-radius:16px;padding:14px 17px}
+.home h2{font-family:'ZCOOL KuaiLe',cursive;font-weight:400;font-size:17px;color:var(--blue)}
+.ck{display:grid;grid-template-columns:1fr 1fr;gap:9px 18px;margin-top:11px}
+.ck div{font-size:12px;color:var(--ink);display:flex;align-items:center;gap:8px;line-height:1.4}
+.ck div .box{width:15px;height:15px;border:1.8px solid var(--blue);border-radius:4px;flex-shrink:0}
+.ask{margin-top:12px;font-size:12.5px;line-height:1.55;color:var(--ink2);display:flex;gap:11px;align-items:center;padding-top:11px;border-top:1px dashed rgba(36,86,232,.3)}
+.ask .ic{width:24px;height:24px;border-radius:8px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px}
+.ask b{color:var(--ink);font-weight:700}
+@page { size: 560px 794px; margin: 0; }
+</style></head>
+<body><main class="page">
+<img class="logo" src="./img/logo.png" alt="跳跳糖 员工公益">
+<span class="deco d1">✦</span>
+<span class="deco d2">?</span>
+<div class="eyebrow">AI AROUND US</div>
+<h1>找找身边的 <span class="hl">AI</span></h1>
+<div class="lead">这一页先找一找：AI 藏在哪里？它不一定长得像机器人，也可能藏在手机、相机、地图和电视里。</div>
+<div class="banner"><img src="./img/tools.jpg" alt="家里的智能音箱、相机、地图小场景"></div>
+<div class="tools">
+<div class="tool"><div class="nm">语音助手</div><div class="info"><b>在哪里</b> 手机、音箱、手表里常见。<b>能做什么</b> 听懂你的话，帮你定闹钟、查天气。</div></div>
+<div class="tool"><div class="nm">拍照识物</div><div class="info"><b>在哪里</b> 相机、相册、识物工具里常见。<b>要注意</b> 它可能认错，要再查一查。</div></div>
+<div class="tool"><div class="nm">地图导航</div><div class="info"><b>在哪里</b> 导航软件里常见。<b>能做什么</b> 比较路线、提醒拥堵；过马路要听大人指挥。</div></div>
+</div>
+<div class="home">
+<h2>家庭 AI 大搜查</h2>
+<div class="ck">
+<div><span class="box"></span>会说话的音箱或手机</div>
+<div><span class="box"></span>能认脸分类的相册</div>
+<div><span class="box"></span>会推荐动画的电视</div>
+<div><span class="box"></span>自动避障的扫地机器人</div>
+</div>
+</div>
+<div class="ask"><div class="ic">?</div><span>你最常见到哪一种 AI？它帮你做了什么事？</span></div>
+<div class="pageno">3</div>
+</main></body></html>

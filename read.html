@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>跳跳糖 AI 魔法探险之旅 · 全册阅读</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC", sans-serif;
+  background: #f0ebe3;
+  min-height: 100vh;
+  padding: 32px 16px 60px;
+}
+.header {
+  text-align: center;
+  padding: 24px 16px 32px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3E3A34;
+  margin-bottom: 8px;
+}
+.header p {
+  font-size: 14px;
+  color: #8B8477;
+}
+.pages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+.page-wrapper {
+  position: relative;
+  width: 560px;
+  max-width: calc(100vw - 32px);
+  aspect-ratio: 560 / 794;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(62, 58, 52, 0.12), 0 1px 6px rgba(62, 58, 52, 0.08);
+  background: #fff;
+}
+.page-wrapper iframe {
+  width: 560px;
+  height: 794px;
+  border: none;
+  display: block;
+  transform-origin: top left;
+}
+.page-label {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  background: rgba(36, 86, 232, 0.85);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  pointer-events: none;
+  z-index: 10;
+}
+.nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid #e8e3db;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 100;
+}
+.nav-bar button {
+  background: #2456E8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.nav-bar button:hover { opacity: 0.85; }
+.nav-bar button:disabled { background: #ccc; cursor: default; }
+.nav-bar span {
+  font-size: 13px;
+  color: #5a5549;
+  min-width: 80px;
+  text-align: center;
+}
+/* Responsive: scale down for narrow screens */
+@media (max-width: 600px) {
+  .page-wrapper {
+    width: 100%;
+  }
+  .page-wrapper iframe {
+    width: 560px;
+    height: 794px;
+    transform: scale(calc((100vw - 32px) / 560));
+  }
+  .page-wrapper {
+    height: calc((100vw - 32px) / 560 * 794);
+  }
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>跳跳糖 AI 魔法探险之旅</h1>
+  <p>版本C · 暖插画 + 电光蓝科技点缀 · 全册 13 页顺序阅读</p>
+</div>
+<div class="pages-container" id="pages">
+</div>
+<div class="nav-bar">
+  <button id="btnPrev" onclick="scrollToPage(currentPage-1)">上一页</button>
+  <span id="pageInfo">1 / 13</span>
+  <button id="btnNext" onclick="scrollToPage(currentPage+1)">下一页</button>
+</div>
+<script>
+const pages = [
+  { file: "page01_cover.html", label: "" },
+  { file: "page02_contents.html", label: "" },
+  { file: "page03_whatis.html", label: "1 · 认识 AI" },
+  { file: "page04_powers.html", label: "2 · 会什么" },
+  { file: "page05_tools.html", label: "3 · 身边 AI" },
+  { file: "page05b_apply.html", label: "4 · AI 帮忙" },
+  { file: "page06_howto.html", label: "5 · 怎么问" },
+  { file: "page08_safety.html", label: "6 · 安全" },
+  { file: "page05c_experiment.html", label: "7 · 小实验" },
+  { file: "page07_limits.html", label: "8 · 会出错" },
+  { file: "page09_relationship.html", label: "9 · 做朋友" },
+  { file: "page10_tasks.html", label: "10 · 任务" },
+  { file: "page11_ending.html", label: "" }
+];
+
+const container = document.getElementById("pages");
+pages.forEach((p, i) => {
+  const wrapper = document.createElement("div");
+  wrapper.className = "page-wrapper";
+  wrapper.id = "page-" + (i + 1);
+  const labelHtml = p.label ? `<div class="page-label">${p.label}</div>` : "";
+  wrapper.innerHTML = `<iframe src="${p.file}" loading="eager" title="${p.label || 'page ' + (i+1)}"></iframe>${labelHtml}`;
+  container.appendChild(wrapper);
+});
+
+let currentPage = 1;
+const totalPages = pages.length;
+
+function updateNav() {
+  document.getElementById("pageInfo").textContent = currentPage + " / " + totalPages;
+  document.getElementById("btnPrev").disabled = currentPage <= 1;
+  document.getElementById("btnNext").disabled = currentPage >= totalPages;
+}
+
+function scrollToPage(n) {
+  if (n < 1 || n > totalPages) return;
+  currentPage = n;
+  updateNav();
+  const el = document.getElementById("page-" + n);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// Track which page is in view
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.intersectionRatio > 0.4) {
+      const id = entry.target.id;
+      const num = parseInt(id.replace("page-", ""));
+      if (num && num !== currentPage) {
+        currentPage = num;
+        updateNav();
+      }
+    }
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll(".page-wrapper").forEach(el => observer.observe(el));
+updateNav();
+</script>
+</body>
+</html>
